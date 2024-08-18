@@ -1,10 +1,10 @@
-import React from "react";
+import "../scss/main/Options.scss";
 
 function Options({ layer, options, current, onLayerChange }) {
   return (
-    <div className="layer-selector">
+    <div className="layerselector">
       <h3>{layer}</h3>
-      <div className="options">
+      <div className="layerselector__options">
         {options.map((option) => {
           const fileName = option.split("/").pop().split(".")[0];
           return (

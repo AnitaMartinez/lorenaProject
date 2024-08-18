@@ -7,12 +7,12 @@ function App() {
   const [layer, setLayers] = useState({
     Background: "src/images/backgrounds/blue50.png",
     Neck: "src/images/neck/default.png",
+    Hair: "src/images/hair/default.png",
     Ears: "src/images/ears/default.png",
     Eyes: "src/images/eyes/default.png",
     Nose: "src/images/nose.png",
     Mouth: "src/images/mouth/default.png",
     Leg: "src/images/leg/default.png",
-    Hair: "src/images/hair/default.png",
   });
 
   const handleLayerChange = (layer, option) => {
@@ -25,19 +25,19 @@ function App() {
   return (
     <div>
       <h2 className="app__title">Alpaca Generator</h2>
-      <section>
+      <section className="app__section">
         <div className="app__imagepreview">
           <ImageLayer src={layer.Background} />
           <ImageLayer src={layer.Neck} />
+          <ImageLayer src={layer.Hair} />
           <ImageLayer src={layer.Ears} />
           <ImageLayer src={layer.Eyes} />
           <ImageLayer src={layer.Nose} />
           <ImageLayer src={layer.Mouth} />
           <ImageLayer src={layer.Leg} />
-          <ImageLayer src={layer.Hair} />
         </div>
 
-        <div>
+        <div className="app__options">
           <Options
             layer="Background"
             options={[
@@ -73,6 +73,20 @@ function App() {
               "src/images/neck/thick.png",
             ]}
             current={layer.Neck}
+            onLayerChange={handleLayerChange}
+          />
+          <Options
+            layer="Hair"
+            options={[
+              "src/images/hair/default.png",
+              "src/images/hair/bang.png",
+              "src/images/hair/curls.png",
+              "src/images/hair/elegant.png",
+              "src/images/hair/fancy.png",
+              "src/images/hair/quiff.png",
+              "src/images/hair/short.png",
+            ]}
+            current={layer.Hair}
             onLayerChange={handleLayerChange}
           />
 
@@ -123,20 +137,6 @@ function App() {
               "src/images/leg/tilt-forward.png",
             ]}
             current={layer.Leg}
-            onLayerChange={handleLayerChange}
-          />
-          <Options
-            layer="Hair"
-            options={[
-              "src/images/hair/default.png",
-              "src/images/hair/bang.png",
-              "src/images/hair/curls.png",
-              "src/images/hair/elegant.png",
-              "src/images/hair/fancy.png",
-              "src/images/hair/quiff.png",
-              "src/images/hair/short.png",
-            ]}
-            current={layer.Hair}
             onLayerChange={handleLayerChange}
           />
         </div>
