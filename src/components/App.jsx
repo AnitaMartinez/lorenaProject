@@ -87,7 +87,6 @@ function App() {
             ]}
             current={layer.Hair}
             onLayerChange={handleLayerChange}
-            onClickOption={handleSection}
           />
 
           <Options
