@@ -22,6 +22,10 @@ function App() {
     }));
   };
 
+  const handleSection = (value) => {
+    console.log(value);
+  };
+
   return (
     <div>
       <h2 className="app__title">Alpaca Generator</h2>
@@ -41,24 +45,23 @@ function App() {
           <Options
             layer="Background"
             options={[
-              "src/images/Backgrounds/blue50.png",
-              "src/images/Backgrounds/blue60.png",
-              "src/images/Backgrounds/blue70.png",
-              "src/images/Backgrounds/darkblue30.png",
-              "src/images/Backgrounds/darkblue50.png",
-              "src/images/Backgrounds/darkblue70.png",
-              "src/images/Backgrounds/green50.png",
-              "src/images/Backgrounds/green60.png",
-              "src/images/Backgrounds/green70.png",
-              "src/images/Backgrounds/green80.png",
-              "src/images/Backgrounds/grey40.png",
-              "src/images/Backgrounds/grey70.png",
-              "src/images/Backgrounds/grey80.png",
-              "src/images/Backgrounds/red50.png",
-              "src/images/Backgrounds/red60.png",
-              "src/images/Backgrounds/red70.png",
-              "src/images/Backgrounds/yellow50.png",
-              "src/images/Backgrounds/yellow60.png",
+              "src/images/backgrounds/blue50.png",
+              "src/images/backgrounds/blue60.png",
+              "src/images/backgrounds/blue70.png",
+              "src/images/backgrounds/darkblue30.png",
+              "src/images/backgrounds/darkblue50.png",
+              "src/images/backgrounds/darkblue70.png",
+              "src/images/backgrounds/green50.png",
+              "src/images/backgrounds/green60.png",
+              "src/images/backgrounds/green70.png",
+              "src/images/backgrounds/grey40.png",
+              "src/images/backgrounds/grey70.png",
+              "src/images/backgrounds/grey80.png",
+              "src/images/backgrounds/red50.png",
+              "src/images/backgrounds/red60.png",
+              "src/images/backgrounds/red70.png",
+              "src/images/backgrounds/yellow50.png",
+              "src/images/backgrounds/yellow60.png",
             ]}
             current={layer.background}
             onLayerChange={handleLayerChange}
@@ -88,6 +91,7 @@ function App() {
             ]}
             current={layer.Hair}
             onLayerChange={handleLayerChange}
+            onClickOption={handleSection}
           />
 
           <Options
