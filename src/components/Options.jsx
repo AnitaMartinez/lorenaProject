@@ -13,7 +13,7 @@ function Options({ layer, options, current, onLayerChange }) {
       <h3 className="layerselector__title">
         {layer}{" "}
         <button className="button__x" onClick={onClickDisplay}>
-          {!isVisible ? "^" : "v"}
+          {!isVisible ? "v" : "^"}
         </button>
       </h3>
       {!isVisible && (

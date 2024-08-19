@@ -22,10 +22,6 @@ function App() {
     }));
   };
 
-  const handleSection = (value) => {
-    console.log(value);
-  };
-
   return (
     <div>
       <h2 className="app__title">Alpaca Generator</h2>
