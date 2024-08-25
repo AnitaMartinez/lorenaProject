@@ -1,29 +1,36 @@
 import "../scss/main/Options.scss";
-import { useState } from "react";
+import { GoChevronDown, GoChevronUp } from "react-icons/go";
 
-function Options({ layer, options, current, onLayerChange }) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const onClickDisplay = () => {
-    setIsVisible(!isVisible);
-  };
-
+function Options({
+  layer,
+  options,
+  current,
+  onLayerChange,
+  isVisible,
+  onLayerVisibility,
+}) {
   return (
     <div className="layerselector">
-      <h3 className="layerselector__title">
-        {layer}{" "}
-        <button className="button__x" onClick={onClickDisplay}>
-          {!isVisible ? "v" : "^"}
+      <div className="layerselector__divtitle" onClick={onLayerVisibility}>
+        <h3 className="layerselector__title">{layer} </h3>
+        <button className="button__x">
+          {isVisible ? (
+            <GoChevronUp size={15} className="icons" />
+          ) : (
+            <GoChevronDown size={15} className="icons" />
+          )}
         </button>
-      </h3>
-      {!isVisible && (
+      </div>
+      {isVisible && (
         <div className="layerselector__options">
           {options.map((option) => {
             const fileName = option.split("/").pop().split(".")[0];
             return (
               <button
                 key={option}
-                className={option === current ? "active" : ""}
+                className={`option-button ${
+                  option === current ? "active" : ""
+                }`}
                 onClick={() => onLayerChange(layer, option)}
               >
                 {fileName}

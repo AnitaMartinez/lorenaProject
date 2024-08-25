@@ -1,16 +1,17 @@
 .app {
   &__title {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(5, 5, 53);
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
+    margin: 0;
+    padding: 25px;
 
-    @media screen and (min-width: 520px) {
-      font-size: 45px;
+    @media screen and (min-width: 790px) {
+      font-size: 70px;
     }
 
     @media screen and (min-width: 790px) {
-      font-size: 65px;
+      font-size: 85px;
     }
   }
 
@@ -20,7 +21,7 @@
     justify-content: center;
     align-items: center;
 
-    @media screen and (min-width: 590px) {
+    @media screen and (min-width: 790px) {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -32,9 +33,14 @@
     padding: 25px;
     text-align: center;
 
-    @media screen and (min-width: 590px) {
+    @media screen and (min-width: 790px) {
       width: 40%;
     }
+  }
+
+  &__imagebox {
+    padding: 10px;
+    background-color: rgb(52, 25, 0);
   }
 
   &__imagepreview {
@@ -52,7 +58,7 @@
     @media screen and (min-width: 790px) {
       width: 400px;
       height: 400px;
-      margin: 40px;
+      // margin: 40px;
     }
   }
 }

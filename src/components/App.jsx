@@ -15,6 +15,8 @@ function App() {
     Leg: "src/images/leg/default.png",
   });
 
+  const [visibleLayer, setVisibleLayer] = useState(null);
+
   const handleLayerChange = (layer, option) => {
     setLayers((prevLayers) => ({
       ...prevLayers,
@@ -22,19 +24,25 @@ function App() {
     }));
   };
 
+  const handleLayerVisibility = (layer) => {
+    setVisibleLayer((prevLayer) => (prevLayer === layer ? null : layer));
+  };
+
   return (
     <div>
       <h2 className="app__title">Alpaca Generator</h2>
       <section className="app__section">
-        <div className="app__imagepreview">
-          <ImageLayer src={layer.Background} />
-          <ImageLayer src={layer.Neck} />
-          <ImageLayer src={layer.Hair} />
-          <ImageLayer src={layer.Ears} />
-          <ImageLayer src={layer.Eyes} />
-          <ImageLayer src={layer.Nose} />
-          <ImageLayer src={layer.Mouth} />
-          <ImageLayer src={layer.Leg} />
+        <div className="app__imagebox">
+          <div className="app__imagepreview">
+            <ImageLayer src={layer.Background} />
+            <ImageLayer src={layer.Neck} />
+            <ImageLayer src={layer.Hair} />
+            <ImageLayer src={layer.Ears} />
+            <ImageLayer src={layer.Eyes} />
+            <ImageLayer src={layer.Nose} />
+            <ImageLayer src={layer.Mouth} />
+            <ImageLayer src={layer.Leg} />
+          </div>
         </div>
 
         <div className="app__options">
@@ -59,12 +67,14 @@ function App() {
               "src/images/backgrounds/yellow50.png",
               "src/images/backgrounds/yellow60.png",
             ]}
-            current={layer.background}
+            current={layer.Background}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Background"}
+            onLayerVisibility={() => handleLayerVisibility("Background")}
           />
 
           <Options
-            layer={"Neck"}
+            layer="Neck"
             options={[
               "src/images/neck/default.png",
               "src/images/neck/bend-backward.png",
@@ -73,7 +83,10 @@ function App() {
             ]}
             current={layer.Neck}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Neck"}
+            onLayerVisibility={() => handleLayerVisibility("Neck")}
           />
+
           <Options
             layer="Hair"
             options={[
@@ -87,30 +100,37 @@ function App() {
             ]}
             current={layer.Hair}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Hair"}
+            onLayerVisibility={() => handleLayerVisibility("Hair")}
           />
 
           <Options
             layer="Ears"
             options={[
-              "src/images/Ears/default.png",
-              "src/images/Ears/tilt-backward.png",
-              "src/images/Ears/tilt-forward.png",
+              "src/images/ears/default.png",
+              "src/images/ears/tilt-backward.png",
+              "src/images/ears/tilt-forward.png",
             ]}
-            current={layer.ears}
+            current={layer.Ears}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Ears"}
+            onLayerVisibility={() => handleLayerVisibility("Ears")}
           />
+
           <Options
             layer="Eyes"
             options={[
-              "src/images/Eyes/default.png",
-              "src/images/Eyes/angry.png",
-              "src/images/Eyes/naughty.png",
-              "src/images/Eyes/panda.png",
-              "src/images/Eyes/smart.png",
-              "src/images/Eyes/star.png",
+              "src/images/eyes/default.png",
+              "src/images/eyes/angry.png",
+              "src/images/eyes/naughty.png",
+              "src/images/eyes/panda.png",
+              "src/images/eyes/smart.png",
+              "src/images/eyes/star.png",
             ]}
             current={layer.Eyes}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Eyes"}
+            onLayerVisibility={() => handleLayerVisibility("Eyes")}
           />
 
           <Options
@@ -124,7 +144,10 @@ function App() {
             ]}
             current={layer.Mouth}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Mouth"}
+            onLayerVisibility={() => handleLayerVisibility("Mouth")}
           />
+
           <Options
             layer="Leg"
             options={[
@@ -137,6 +160,8 @@ function App() {
             ]}
             current={layer.Leg}
             onLayerChange={handleLayerChange}
+            isVisible={visibleLayer === "Leg"}
+            onLayerVisibility={() => handleLayerVisibility("Leg")}
           />
         </div>
       </section>
