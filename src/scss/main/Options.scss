@@ -16,9 +16,6 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    // @media screen and (min-width: ) {
-    // }
   }
 
   &__options {
@@ -33,4 +30,9 @@ button {
 .option-button {
   color: rgb(5, 5, 53);
   font-weight: bold;
+}
+
+.option-button:active {
+  background-color: rgb(162, 178, 222);
+  color: navy;
 }
