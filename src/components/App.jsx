@@ -4,74 +4,13 @@ import ImageLayer from "./ImageLayer.jsx";
 import Options from "./Options.jsx";
 import { toPng } from "html-to-image";
 
-//importación imágenes- Backgrounds
-import Blue50 from "../images/backgrounds/blue50.png";
-import Blue60 from "../images/backgrounds/blue60.png";
-import Blue70 from "../images/backgrounds/blue70.png";
-import DarkBlue30 from "../images/backgrounds/darkblue30.png";
-import DarkBlue50 from "../images/backgrounds/darkblue50.png";
-import DarkBlue70 from "../images/backgrounds/darkblue70.png";
-import Green50 from "../images/backgrounds/green50.png";
-import Green60 from "../images/backgrounds/green60.png";
-import Green70 from "../images/backgrounds/green70.png";
-import Grey40 from "../images/backgrounds/grey40.png";
-import Grey70 from "../images/backgrounds/grey70.png";
-import Grey80 from "../images/backgrounds/grey80.png";
-import Red50 from "../images/backgrounds/red50.png";
-import Red60 from "../images/backgrounds/red60.png";
-import Red70 from "../images/backgrounds/red70.png";
-import Yellow50 from "../images/backgrounds/yellow50.png";
-import Yellow60 from "../images/backgrounds/yellow60.png";
-
-//Importación imágenes- Neck
-import Default from "../images/neck/default.png";
-import Bend_Backwards from "../images/neck/bend-backward.png";
-import Bend_Forward from "../images/neck/bend-forward.png";
-import Thick from "../images/neck/thick.png";
-
-//Importación imágenes- Hair
-import Normal from "../images/hair/default.png";
-import Bang from "../images/hair/bang.png";
-import Curls from "../images/hair/curls.png";
-import Elegant from "../images/hair/elegant.png";
-import Fancy from "../images/hair/fancy.png";
-import Short from "../images/hair/short.png";
-
-//Importación imágenes- Ears
-import Ears from "../images/ears/default.png";
-import Tilt_Backward from "../images/ears/tilt-backward.png";
-import Tilt_Forward from "../images/ears/tilt-forward.png";
-
-//Importación imágenes- Eyes
-import Eyes from "../images/eyes/default.png";
-import Angry from "../images/eyes/angry.png";
-import Naughty from "../images/eyes/naughty.png";
-import Panda from "../images/eyes/panda.png";
-import Smart from "../images/eyes/smart.png";
-import Star from "../images/eyes/star.png";
-
-//Importación imágenes- Mouth
-import Mouth from "../images/mouth/default.png";
-import Astonished from "../images/mouth/astonished.png";
-import Eating from "../images/mouth/eating.png";
-import Laugh from "../images/mouth/laugh.png";
-import Tongue from "../images/mouth/tongue.png";
-
-//Importación imágenes - Leg
-import Leg from "../images/leg/default.png";
-import Bubble_Tea from "../images/leg/bubble-tea.png";
-import Cookie from "../images/leg/cookie.png";
-import Game_Console from "../images/leg/game-console.png";
-import Tilt_Backwards from "../images/leg/tilt-backward.png";
-import Tilt_Forwards from "../images/leg/tilt-forward.png";
-
 function App() {
   const [layer, setLayers] = useState({
-    Background: Blue50,
-    Neck: Default,
-    Hair: Normal,
-    Ears: Ears,
-    Eyes: Eyes,
+    Background: "src/images/backgrounds/blue50.png",
+    Neck: "src/images/neck/default.png",
+    Hair: "src/images/hair/default.png",
+    Ears: "src/images/ears/default.png",
+    Eyes: "src/images/eyes/default.png",
     Nose: "src/images/nose.png",
     Mouth: "src/images/mouth/default.png",
     Leg: "src/images/leg/default.png",
@@ -136,23 +75,23 @@ function App() {
             <Options
               layer="Background"
               options={[
-                Blue50,
-                Blue60,
-                Blue70,
-                DarkBlue30,
-                DarkBlue50,
-                DarkBlue70,
-                Green50,
-                Green60,
-                Green70,
-                Grey40,
-                Grey70,
-                Grey80,
-                Red50,
-                Red60,
-                Red70,
-                Yellow50,
-                Yellow60,
+                "src/images/backgrounds/blue50.png",
+                "src/images/backgrounds/blue60.png",
+                "src/images/backgrounds/blue70.png",
+                "src/images/backgrounds/darkblue30.png",
+                "src/images/backgrounds/darkblue50.png",
+                "src/images/backgrounds/darkblue70.png",
+                "src/images/backgrounds/green50.png",
+                "src/images/backgrounds/green60.png",
+                "src/images/backgrounds/green70.png",
+                "src/images/backgrounds/grey40.png",
+                "src/images/backgrounds/grey70.png",
+                "src/images/backgrounds/grey80.png",
+                "src/images/backgrounds/red50.png",
+                "src/images/backgrounds/red60.png",
+                "src/images/backgrounds/red70.png",
+                "src/images/backgrounds/yellow50.png",
+                "src/images/backgrounds/yellow60.png",
               ]}
               current={layer.Background}
               onLayerChange={handleLayerChange}
@@ -162,7 +101,12 @@ function App() {
 
             <Options
               layer="Neck"
-              options={[Default, Bend_Backwards, Bend_Forward, Thick]}
+              options={[
+                "src/images/neck/default.png",
+                "src/images/neck/bend-backward.png",
+                "src/images/neck/bend-forward.png",
+                "src/images/neck/thick.png",
+              ]}
               current={layer.Neck}
               onLayerChange={handleLayerChange}
               isVisible={visibleLayer === "Neck"}
@@ -171,7 +115,14 @@ function App() {
 
             <Options
               layer="Hair"
-              options={[Normal, Bang, Curls, Elegant, Fancy, Short]}
+              options={[
+                "src/images/hair/default.png",
+                "src/images/hair/bang.png",
+                "src/images/hair/curls.png",
+                "src/images/hair/elegant.png",
+                "src/images/hair/fancy.png",
+                "src/images/hair/short.png",
+              ]}
               current={layer.Hair}
               onLayerChange={handleLayerChange}
               isVisible={visibleLayer === "Hair"}
@@ -180,7 +131,11 @@ function App() {
 
             <Options
               layer="Ears"
-              options={[Ears, Tilt_Backward, Tilt_Forward]}
+              options={[
+                "src/images/ears/default.png",
+                "src/images/ears/tilt-backward.png",
+                "src/images/ears/tilt-forward.png",
+              ]}
               current={layer.Ears}
               onLayerChange={handleLayerChange}
               isVisible={visibleLayer === "Ears"}
@@ -189,7 +144,14 @@ function App() {
 
             <Options
               layer="Eyes"
-              options={[Eyes, Angry, Naughty, Panda, Smart, Star]}
+              options={[
+                "src/images/eyes/default.png",
+                "src/images/eyes/angry.png",
+                "src/images/eyes/naughty.png",
+                "src/images/eyes/panda.png",
+                "src/images/eyes/smart.png",
+                "src/images/eyes/star.png",
+              ]}
               current={layer.Eyes}
               onLayerChange={handleLayerChange}
               isVisible={visibleLayer === "Eyes"}
@@ -198,7 +160,13 @@ function App() {
 
             <Options
               layer="Mouth"
-              options={[Mouth, Astonished, Eating, Laugh, Tongue]}
+              options={[
+                "src/images/mouth/default.png",
+                "src/images/mouth/astonished.png",
+                "src/images/mouth/eating.png",
+                "src/images/mouth/laugh.png",
+                "src/images/mouth/tongue.png",
+              ]}
               current={layer.Mouth}
               onLayerChange={handleLayerChange}
               isVisible={visibleLayer === "Mouth"}
@@ -208,12 +176,12 @@ function App() {
             <Options
               layer="Leg"
               options={[
-                Leg,
-                Bubble_Tea,
-                Cookie,
-                Game_Console,
-                Tilt_Backwards,
-                Tilt_Forwards,
+                "src/images/leg/default.png",
+                "src/images/leg/bubble-tea.png",
+                "src/images/leg/cookie.png",
+                "src/images/leg/game-console.png",
+                "src/images/leg/tilt-backward.png",
+                "src/images/leg/tilt-forward.png",
               ]}
               current={layer.Leg}
               onLayerChange={handleLayerChange}
