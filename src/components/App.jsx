@@ -121,7 +121,6 @@ function App() {
                 "src/images/hair/curls.png",
                 "src/images/hair/elegant.png",
                 "src/images/hair/fancy.png",
-                "src/images/hair/quiff.png",
                 "src/images/hair/short.png",
               ]}
               current={layer.Hair}
